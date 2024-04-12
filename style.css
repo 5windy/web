@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+}
+
+#wrap {
+    display: grid;
+    gap: 10px;
+    max-width: 1440px;
+    min-height: 100vh;
+    margin: auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 200px auto 200px;
+    grid-template-areas:
+    "header header header header"
+    "container container container aside"
+    "footer footer footer footer"
+    ;
+}
+
+#section-container,
+aside,
+footer {
+    background-color: whitesmoke;
+}
+
+header {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 3fr 2fr;
+    grid-template-areas:
+    "logo nav-main nav-main nav-main"
+    "nav-sub nav-sub nav-sub nav-sub"
+    ;
+    grid-area: header;
+}
+
+header > div#logo {
+    grid-area: logo;
+}
+
+#logo > h1 {
+    font-family: "Abril Fatface", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3em;
+    line-height: 0.6;
+}
+
+header > nav#nav-main {
+    grid-area: nav-main;
+}
+
+#nav-main > ul {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    list-style: none;
+}
+
+#float-list {
+    float: right;
+}
+
+header > nav#nav-sub {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: solid 1px red;
+    border-bottom: solid 3px red;
+    grid-area: nav-sub;
+}
+
+header > nav#nav-sub > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 18%;
+    height: 50px;
+}
+
+header > nav#nav-sub > div:not(:last-child) {
+    border-right: solid 1px lightgray;
+}
+
+#section-container {
+    display: grid;
+    gap: 10px;
+    grid-template-rows: 600px;
+    grid-auto-rows: 600px;
+    grid-area: container;
+}
+
+section {
+    background-color: lightblue;
+}
+
+section#sec-main {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas:
+    "at1 at3"
+    "at2 at3"
+    ;
+}
+
+section#sec-main > article:first-child {
+    grid-area: at1;
+}
+
+section#sec-main > article:nth-child(odd) > div#image {
+    width: 100%;
+    height: 50%;
+    background: center / cover no-repeat url('https://cdn.wadiz.kr/ft/images/green001/2021/1213/20211213120822340_4.jpg/wadiz/format/jpg/quality/80/');
+}
+
+section#sec-main > article:nth-child(2) > div#image {
+    float: right;
+    width: 50%;
+    height: 50%;
+    background: center / cover no-repeat url('https://cdn.wadiz.kr/ft/images/green001/2021/1213/20211213120822340_4.jpg/wadiz/format/jpg/quality/80/');
+}
+
+section#sec-main > article:nth-child(2) {
+    grid-area: at2;
+}
+
+section#sec-main > article:last-child {
+    grid-area: at3;
+}
+
+article {
+    background-color: lightgray;
+}
+
+aside {
+    display: grid;
+    gap: 10px;
+    grid-template-rows: 600px;
+    grid-area: aside;
+}
+
+aside > div {
+    background-color: lightcoral;
+}
+
+aside > div:nth-child(2) {
+    height: 1000px;
+}
+
+footer {
+    grid-area: footer;
+}
