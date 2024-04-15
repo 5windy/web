@@ -1,0 +1,54 @@
+#container {
+    width: 440px;
+    margin: auto;
+}
+
+h1 {
+    color: red;
+    text-align: center;
+    margin-top: 50px;
+}
+
+p {
+    display: none;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#btns {
+    display: flex;
+}
+
+#btns > div {
+    color : red;    
+    border: solid 1px red;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    padding: 10px 20px;
+}
+
+#btns>div:not(:last-child) {
+    border-right: none;
+}
+
+#btns>div:hover {
+    cursor: pointer;
+    color: white;
+    background-color: red;
+}
+
+#contents {
+    height: 500px;
+    border: solid 1px red;
+    padding: 10px 20px;
+
+}
+
+#html:checked ~ #contents > p:first-child, 
+#css:checked ~ #contents > p:nth-child(2), 
+#javascript:checked ~ #contents > p:last-child 
+{
+    display: block;
+}
