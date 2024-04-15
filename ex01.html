@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="ex01.css">
     <title>네이버 : 회원가입</title>
 </head>
+
 <body>
     <h1>회원가입</h1>
     <form action="http://localhost:8080">
@@ -19,7 +21,7 @@
         <div>
             <input type="text" id="name" name="name" placeholder="이름" required>
             <input type="number" id="birth" name="birth" min="19200101" max="20240415" placeholder="생년월일 8자리" required>
-            <select id= "telecom" name="telecom" required>
+            <select id="telecom" name="telecom" required>
                 <option disabled selected>통신사 선택</option>
                 <option value="skt">SKT</option>
                 <option value="kt">KT</option>
@@ -32,17 +34,42 @@
                 <div>
                     <input type="radio" id="male" name="gender" value="male">
                     <input type="radio" id="female" name="gender" value="female">
+                    <label id="label-male" for="male">
+                        <div>
+                            <span>남자</span>
+                        </div>
+                    </label>
+                    <label id="label-female" for="female">
+                        <div>
+                            <span>여자</span>
+                        </div>
+                    </label>
                 </div>
                 <div>
                     <input type="radio" id="non-foreigner" name="foreigner" value="false" checked>
                     <input type="radio" id="foreigner" name="foreigner" value="true">
+                    <label id="label-nf" for="non-foreigner">
+                        <div>
+                            <span>내국인</span>
+                        </div>
+                    </label>
+                    <label id="label-f" for="foreigner">
+                        <div>
+                            <span>외국인</span>
+                        </div>
+                    </label>
                 </div>
             </div>
             <input type="text" id="phone" name="phone" pattern="\d{3}-\d{4}-\d{4}|\d{11}" placeholder="휴대전화번호" required>
         </div>
         <div>
-            <input type="radio" id="agree" name="agree" required>
-            <span>[필수]</span>&nbsp;인증 약관 전체동의
+            <input type="checkbox" id="agree" name="agree" required>
+            <label id="label-agree" for="agree">
+                <div>
+                    <span>✓</span>
+                </div>
+            </label>
+            <span>&nbsp;&nbsp;[필수]</span>&nbsp;인증 약관 전체동의
         </div>
 
         <input type="submit" value="회원가입">
@@ -50,4 +77,5 @@
 
 
 </body>
+
 </html>

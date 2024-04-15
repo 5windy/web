@@ -13,18 +13,22 @@ h1 {
 }
 
 form,
-form > div:not(:nth-child(3))
-{
+form>div {
     display: flex;
     flex-direction: column;
 }
 
-form > div {
+form>div:nth-child(3) {
+    flex-direction: row;
+}
+
+form>div {
     margin: 10px 0;
 }
 
-form > div:first-child > span {
-    color: gray;
+form>div:first-child>span {
+    color: grey;
+    font-size: 0.9em;
     position: absolute;
     align-self: flex-end;
     margin: 16px 10px;
@@ -42,8 +46,7 @@ input[type="number"],
 input[type="submit"],
 select,
 #radio-container,
-form > div:nth-child(3)
-{
+form>div:nth-child(3) {
     padding: 14px 10px;
     border: solid 1px lightgray;
     border-bottom: none;
@@ -54,30 +57,75 @@ input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 input[type="number"]:focus,
-select:focus
-{
+select:focus {
     border: solid 2px #0aaa5c;
 }
 
 #radio-container {
     display: flex;
+    gap: 10px;
 }
 
-form > div > input:first-child
+#radio-container > div {
+    display: flex;
+    justify-content: center;
+}
+
+#radio-container>div label {
+    margin: auto;
+}
+
+#radio-container > div div {
+    width: 80px;
+    padding: 10px;
+    border: solid 1px lightgrey;
+}
+
+#male:checked ~ #label-male > div > span,
+#female:checked ~ #label-female > div > span,
+#non-foreigner:checked ~ #label-nf span,
+#foreigner:checked ~ #label-f span
 {
-    border-radius: 5px 5px 0 0;
+    color: #0aaa5c;
+}
+
+#male:checked~#label-male>div,
+#female:checked~#label-female>div,
+#non-foreigner:checked~#label-nf>div,
+#foreigner:checked~#label-f>div {
+    border: solid 1px #0aaa5c;
+}
+
+#male:checked~#label-female>div,
+#non-foreigner:checked~ #label-f>div{
+    border-left: none;
+}
+
+#radio-container>div>label:not(:last-child)>div {
+    border-right: none;
+}
+
+#radio-container>div > label:nth-child(3) > div {
+    border-radius: 6px 0 0 6px;
+}
+
+#radio-container>div>label:last-child>div {
+    border-radius: 0 6px 6px 0;
+}
+
+form>div>input:first-child {
+    border-radius: 7px 7px 0 0;
     padding-top: 16px;
 }
 
 form>div>input:last-child {
-    border-radius: 0 0 5px 5px;
+    border-radius: 0 0 7px 7px;
     border-bottom: solid 1px lightgray;
     padding-bottom: 16px;
 }
 
 form>div:nth-child(3),
-input[type="submit"]
-{
+input[type="submit"] {
     border-radius: 5px;
     border-bottom: solid 1px lightgray;
 }
@@ -86,16 +134,44 @@ form>div:nth-child(3) {
     font-size: 0.8em;
 }
 
-form>div:nth-child(3) > span {
+form>div:nth-child(3)>span {
     color: #0aaa5c;
+}
+
+form>div:nth-child(3) div {
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    border: solid 1px lightgrey;
+}
+
+#agree:checked ~ #label-agree span {
+    display: block;
+}
+
+#agree:checked~#label-agree > div {
+    border-color: #0aaa5c;
+}
+
+form>div:nth-child(3) div > span {
+    display: none;
+    color: #0aaa5c;
+    margin-left: 3px;
 }
 
 input[type="submit"] {
     color: white;
     border: none;
     background-color: #0aaa5c;
+    margin-top: 100px;
 }
 
 select {
     color: gray;
+}
+
+input[type="radio"], 
+input[type="checkbox"]
+{
+    display: none;
 }
