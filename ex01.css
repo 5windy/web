@@ -66,26 +66,23 @@ select:focus {
     gap: 10px;
 }
 
-#radio-container > div {
+#radio-container>div,
+#radio-container>div div
+{
     display: flex;
     justify-content: center;
 }
 
-#radio-container>div label {
-    margin: auto;
-}
-
-#radio-container > div div {
+#radio-container>div div {
     width: 80px;
     padding: 10px;
     border: solid 1px lightgrey;
 }
 
-#male:checked ~ #label-male > div > span,
-#female:checked ~ #label-female > div > span,
-#non-foreigner:checked ~ #label-nf span,
-#foreigner:checked ~ #label-f span
-{
+#male:checked~#label-male>div>span,
+#female:checked~#label-female>div>span,
+#non-foreigner:checked~#label-nf span,
+#foreigner:checked~#label-f span {
     color: #0aaa5c;
 }
 
@@ -97,15 +94,19 @@ select:focus {
 }
 
 #male:checked~#label-female>div,
-#non-foreigner:checked~ #label-f>div{
+#non-foreigner:checked~#label-f>div {
     border-left: none;
+}
+
+#radio-container>div span {
+    font-size: 0.8em;
 }
 
 #radio-container>div>label:not(:last-child)>div {
     border-right: none;
 }
 
-#radio-container>div > label:nth-child(3) > div {
+#radio-container>div>label:nth-child(3)>div {
     border-radius: 6px 0 0 6px;
 }
 
@@ -145,15 +146,15 @@ form>div:nth-child(3) div {
     border: solid 1px lightgrey;
 }
 
-#agree:checked ~ #label-agree span {
+#agree:checked~#label-agree span {
     display: block;
 }
 
-#agree:checked~#label-agree > div {
+#agree:checked~#label-agree>div {
     border-color: #0aaa5c;
 }
 
-form>div:nth-child(3) div > span {
+form>div:nth-child(3) div>span {
     display: none;
     color: #0aaa5c;
     margin-left: 3px;
@@ -170,8 +171,11 @@ select {
     color: gray;
 }
 
-input[type="radio"], 
-input[type="checkbox"]
-{
+input[type="radio"],
+input[type="checkbox"] {
     display: none;
+}
+
+label {
+    cursor: pointer;
 }
