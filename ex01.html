@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="ex01.css">
+    <title>네이버 : 회원가입</title>
+</head>
+<body>
+    <h1>회원가입</h1>
+    <form action="http://localhost:8080">
+        <div>
+            <input type="text" id="id" name="id" placeholder="아이디" required>
+            <span>@naver.com</span>
+            <input type="password" id="password" name="password" placeholder="비밀번호" required>
+            <input type="email" id="email" name="email" placeholder="[선택] 이메일주소 (비밀번호 찾기 등 본인 확인용)">
+        </div>
+        <div>
+            <input type="text" id="name" name="name" placeholder="이름" required>
+            <input type="number" id="birth" name="birth" min="19200101" max="20240415" placeholder="생년월일 8자리" required>
+            <select id= "telecom" name="telecom" required>
+                <option disabled selected>통신사 선택</option>
+                <option value="skt">SKT</option>
+                <option value="kt">KT</option>
+                <option value="lgt">LGU+</option>
+                <option value="skt-b">알뜰SKT</option>
+                <option value="kt-b">알뜰KT</option>
+                <option value="lgt-b">알뜰LGU+</option>
+            </select>
+            <div id="radio-container">
+                <div>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <input type="radio" id="female" name="gender" value="female">
+                </div>
+                <div>
+                    <input type="radio" id="non-foreigner" name="foreigner" value="false" checked>
+                    <input type="radio" id="foreigner" name="foreigner" value="true">
+                </div>
+            </div>
+            <input type="text" id="phone" name="phone" pattern="\d{3}-\d{4}-\d{4}|\d{11}" placeholder="휴대전화번호" required>
+        </div>
+        <div>
+            <input type="radio" id="agree" name="agree" required>
+            <span>[필수]</span>&nbsp;인증 약관 전체동의
+        </div>
+
+        <input type="submit" value="회원가입">
+    </form>
+
+
+</body>
+</html>
