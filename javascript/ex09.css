@@ -1,0 +1,51 @@
+body {
+    text-align: center;
+}
+
+h1 {
+    margin-top: 50px;
+}
+
+button {
+    width: 100px;
+    height: 60px;
+    color: whitesmoke;
+    background-color: rgba(248, 78, 69, 1);
+    border: none;
+    border-radius: 6px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 80vw;
+    min-height: 100vh;
+    margin: 20px auto;
+    padding: 30px 20px;
+    background: url('https://img.freepik.com/free-photo/digital-art-organic-floral-shapes-pattern_23-2151072788.jpg?size=626&ext=jpg&ga=GA1.1.1700460183.1712448000&semt=ais');
+    
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 260px;
+    height: 380px;
+    color: whitesmoke;
+    border-radius: 20px;
+    box-shadow: 6px 6px rgba(248, 78, 69, 0.9);
+    background-color: rgba(0,0,0,0.8);
+}
+
+.profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    background: center / cover no-repeat url('https://media.wired.com/photos/59d6bc994dec4e4689be1b34/4:3/w_697,h_523,c_limit/animoji-FA.jpg');
+}
