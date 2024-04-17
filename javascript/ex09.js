@@ -36,13 +36,41 @@ function join() {
 }
 
 function createProfileCard(user) {
-    container.innerHTML += `
-        <div class="card">
-            <div class="profile-image"></div>
-            <div class="profile">
-                <h2>${user.name}(${user.age})</h2>
-                <span>${user.id}</span>
-            </div>
-        </div>
-    `;
+    // container.innerHTML += `
+    //     <div class="card">
+    //         <div class="profile-image"></div>
+    //         <div class="profile">
+    //             <h2>${user.name}(${user.age})</h2>
+    //             <span>${user.id}</span>
+    //         </div>
+    //     </div>
+    // `;
+
+    // createElement & append 를 사용하여 
+    // container 에 카드 생성하기 
+
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    const image = document.createElement('div');
+    image.className = 'profile-image';
+
+    const profile = document.createElement('div');
+    profile.className = 'profile';
+
+    const name = document.createElement('h2');
+    name.innerText = `${user.name}(${user.age})`;
+
+    const id = document.createElement('span');
+    id.innerText = user.id;
+
+    // 조립 
+    profile.append(name);
+    profile.append(id);
+
+    card.append(image);
+    card.append(profile);
+
+    container.append(card);
+
 }
