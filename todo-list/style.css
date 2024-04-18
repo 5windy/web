@@ -1,34 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grandiflora+One&display=swap');
 
 * {
+    margin: 0;
+    padding: 0;
     font-family: "IBM Plex Sans KR", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
 h1 {
-    color: green;
+    color: #5356FF;
     text-align: center;
-    margin: 30px 0;
+    margin: 50px 0 30px 0;
+
+    font-family: "Grandiflora One", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
 
 form {
     display: flex;
     justify-content: center;
     width: 400px;
-    margin: auto;
+    margin: 0 auto 50px auto;
 }
 
 #todo {
+    width: 100%;
+    color: #5356FF;
     outline: none;
-    padding: 5px 10px;
-    border: solid 3px green;
+    padding: 15px 10px;
+    border: solid 3px #5356FF;
 }
 
 form>input[type="submit"] {
+    outline: none;
+    padding: 10px;
     color: whitesmoke;
-    border: solid 3px green;
-    background-color: green;
+    border: solid 3px #5356FF;
+    background-color: #5356FF;
 }
 
 form>input[type="submit"]:hover,
@@ -38,8 +49,7 @@ form>input[type="submit"]:hover,
 
 ul {
     width: 400px;
-    margin: 30px auto;
-    padding: 20px 30px;
+    margin: 0 auto;
     list-style: none;
 }
 
@@ -47,23 +57,37 @@ li {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: solid 2px green;
-    padding: 10px 1px;
+    border-bottom: solid 1px #378CE7;
+    padding: 15px 1px;
 }
 
 li:first-child {
-    border-top: solid 2px green;
+    border-top: solid 3px #378CE7;
+}
+
+li:last-child {
+    border-bottom: solid 3px #378CE7;
+}
+
+li:hover {
+    cursor: none;
+    background-color: #5356FF;
+}
+
+li:hover>p,
+li:hover>button {
+    color: whitesmoke;
 }
 
 p {
-    color: tomato;
+    color: #5356FF;
     font-size: 0.8em;
 }
 
 .delete {
     width: 24px;
     height: 24px;
-    color: whitesmoke;
-    background-color: tomato;
+    color: #5356FF;
+    background-color: rgba(0, 0, 0, 0);
     border: none;
 }
