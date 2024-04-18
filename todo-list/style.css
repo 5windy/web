@@ -70,13 +70,7 @@ li:last-child {
 }
 
 li:hover {
-    cursor: none;
-    background-color: #5356FF;
-}
-
-li:hover>p,
-li:hover>button {
-    color: whitesmoke;
+    background-color: whitesmoke;
 }
 
 p {
